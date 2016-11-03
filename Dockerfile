@@ -1,7 +1,8 @@
 FROM pablozaiden/typescript
 
-# Install Java
-RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+RUN sed -i 's/http:\/\/httpredir.debian.org\/debian/http:\/\/httpredir.debian.org\/debian/g' /etc/apt/sources.list
+
+RUN echo "deb http://ftp.us.debian.org/debian/ jessie-backports main" >> /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y default-jre
 RUN apt-get install -y libtesseract-dev
