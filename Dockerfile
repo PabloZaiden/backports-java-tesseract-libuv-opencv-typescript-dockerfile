@@ -1,6 +1,6 @@
 FROM pablozaiden/typescript
 
-RUN sed -i 's/http:\/\/httpredir.debian.org\/debian/http:\/\/httpredir.debian.org\/debian/g' /etc/apt/sources.list
+RUN sed -i 's/http:\/\/httpredir\.debian\.org\/debian/http:\/\/ftp.us.debian.org\/debian/g' /etc/apt/sources.list
 
 RUN echo "deb http://ftp.us.debian.org/debian/ jessie-backports main" >> /etc/apt/sources.list
 RUN apt-get update
